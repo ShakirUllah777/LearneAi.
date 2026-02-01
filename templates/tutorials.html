@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2 class="text-4xl font-bold mb-8 text-center">Tutorials</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+{% for t in tutorials %}
+    <div class="bg-white border rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition">
+        <img src="{{ t.image.url }}" alt="{{ t.title }}" class="w-full h-48 object-cover">
+        <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">{{ t.title }}</h3>
+            <p class="text-gray-600 mb-4">{{ t.description }}</p>
+            <a href="{{ t.youtube_url }}" target="_blank"
+               class="inline-block px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition">
+               Watch Tutorial →
+            </a>
+        </div>
+    </div>
+{% endfor %}
+</div>
+
+{% endblock %}

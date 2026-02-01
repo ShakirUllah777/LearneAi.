@@ -1,0 +1,38 @@
+{% load static %}
+<!doctype html>
+<html>
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>LearneAi</title>
+  </head>
+  <body class="bg-white text-black">
+    <nav class="flex justify-between p-4 shadow">
+      <h1 class="text-2xl font-bold">
+        <span class="text-green-600">Learne</span>
+        <span class="text-red-600">Ai.</span>
+      </h1>
+      <div class="space-x-4">
+        <a href="/">Home</a>
+        <a href="/tutorials/">Tutorials</a>
+        <a href="/roadmaps/">Roadmaps</a>
+        <a href="/about/">About</a>
+        {% if user.is_authenticated %}
+        <a href="/logout/">Logout</a>
+        {% else %}
+        <a href="/login/">Login</a>
+        <a href="/register/">Register</a>
+        {% endif %}
+      </div>
+    </nav>
+
+    {% if messages %}
+    <div class="max-w-md mx-auto mt-4">
+      {% for message in messages %}
+      <div class="bg-red-100 text-red-700 p-2 rounded mb-2">{{ message }}</div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="p-8">{% block content %}{% endblock %}</div>
+  </body>
+</html>
