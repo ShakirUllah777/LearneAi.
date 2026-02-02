@@ -1,7 +1,63 @@
-{% extends 'base.html' %} {% block content %}
-<h2>{{ about.title }}</h2>
-<p>{{ about.description }}</p>
-<h3>Education</h3>
-<p>{{ about.education }}</p>
-<img src="{{ about.image.url }}" />
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- MAIN ABOUT SECTION -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center py-16">
+
+    <!-- LEFT SIDE: TEXT -->
+    <div>
+        <h1 class="text-4xl font-bold mb-4">
+            Hi, I’m <span class="text-green-600">{{ about.title }}</span>
+        </h1>
+        <p class="text-gray-700 text-lg leading-relaxed">
+            {{ about.description }}
+        </p>
+    </div>
+
+    <!-- RIGHT SIDE: IMAGE -->
+    <div class="flex justify-center">
+        <img src="{{ about.image.url }}"
+             alt="Profile Image"
+             class="w-72 h-72 object-cover rounded-full shadow-lg">
+    </div>
+
+</section>
+
+<!-- EDUCATION SECTION -->
+<section class="py-12 border-t">
+    <h2 class="text-3xl font-semibold mb-4 text-center">Education</h2>
+    <p class="text-gray-700 max-w-3xl mx-auto text-center leading-relaxed">
+        {{ about.education }}
+    </p>
+</section>
+
+<!-- SOCIAL MEDIA SECTION -->
+<section class="py-12 border-t">
+    <h2 class="text-3xl font-semibold mb-6 text-center">Connect With Me</h2>
+
+    <div class="flex justify-center space-x-8 text-3xl">
+
+        <!-- WhatsApp -->
+        <a href="#" class="text-green-600 hover:scale-110 transition">
+            📱
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="#" class="text-blue-600 hover:scale-110 transition">
+            💼
+        </a>
+
+        <!-- Instagram -->
+        <a href="#" class="text-pink-600 hover:scale-110 transition">
+            📸
+        </a>
+
+        <!-- Gmail -->
+        <a href="#" class="text-red-600 hover:scale-110 transition">
+            ✉️
+        </a>
+
+    </div>
+</section>
+
 {% endblock %}
