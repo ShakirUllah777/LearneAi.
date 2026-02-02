@@ -6,10 +6,15 @@
 
     <!-- LEFT SIDE: TEXT -->
     <div>
-        <h1 class="text-4xl font-bold mb-4">
-            Hi, I’m <span class="text-green-600">{{ about.title }}</span>
+        <h1 class="text-4xl font-bold mb-4
+                   text-black dark:text-white">
+            Hi, I’m <span class="text-green-600 dark:text-green-400">
+                {{ about.title }}
+            </span>
         </h1>
-        <p class="text-gray-700 text-lg leading-relaxed">
+
+        <p class="text-lg leading-relaxed
+                  text-gray-700 dark:text-gray-300">
             {{ about.description }}
         </p>
     </div>
@@ -18,42 +23,63 @@
     <div class="flex justify-center">
         <img src="{{ about.image.url }}"
              alt="Profile Image"
-             class="w-72 h-72 object-cover rounded-full shadow-lg">
+             class="w-72 h-72 object-cover rounded-full shadow-lg
+                    ring-4 ring-green-500/20">
     </div>
 
 </section>
 
 <!-- EDUCATION SECTION -->
-<section class="py-12 border-t">
-    <h2 class="text-3xl font-semibold mb-4 text-center">Education</h2>
-    <p class="text-gray-700 max-w-3xl mx-auto text-center leading-relaxed">
+<section class="py-12 border-t
+                border-gray-200 dark:border-gray-700">
+
+    <h2 class="text-3xl font-semibold mb-4 text-center
+               text-black dark:text-white">
+        Education
+    </h2>
+
+    <p class="max-w-3xl mx-auto text-center leading-relaxed
+              text-gray-700 dark:text-gray-300">
         {{ about.education }}
     </p>
 </section>
 
 <!-- SOCIAL MEDIA SECTION -->
-<section class="py-12 border-t">
-    <h2 class="text-3xl font-semibold mb-6 text-center">Connect With Me</h2>
+<section class="py-12 border-t
+                border-gray-200 dark:border-gray-700">
+
+    <h2 class="text-3xl font-semibold mb-6 text-center
+               text-black dark:text-white">
+        Connect With Me
+    </h2>
 
     <div class="flex justify-center space-x-8 text-3xl">
 
         <!-- WhatsApp -->
-        <a href="#" class="text-green-600 hover:scale-110 transition">
+        <a href="#"
+           class="text-green-600 dark:text-green-400
+                  hover:scale-110 transition">
             📱
         </a>
 
         <!-- LinkedIn -->
-        <a href="#" class="text-blue-600 hover:scale-110 transition">
+        <a href="#"
+           class="text-blue-600 dark:text-blue-400
+                  hover:scale-110 transition">
             💼
         </a>
 
         <!-- Instagram -->
-        <a href="#" class="text-pink-600 hover:scale-110 transition">
+        <a href="#"
+           class="text-pink-600 dark:text-pink-400
+                  hover:scale-110 transition">
             📸
         </a>
 
         <!-- Gmail -->
-        <a href="#" class="text-red-600 hover:scale-110 transition">
+        <a href="#"
+           class="text-red-600 dark:text-red-400
+                  hover:scale-110 transition">
             ✉️
         </a>
 
