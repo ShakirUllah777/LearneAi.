@@ -5,10 +5,8 @@
     <meta charset="utf-8">
     <title>LearneAi</title>
 
-    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Tailwind Dark Mode Config -->
     <script>
       tailwind.config = {
         darkMode: 'class',
@@ -16,19 +14,17 @@
     </script>
   </head>
 
-  <body class="bg-white text-black dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+  <body class="bg-white text-black dark:bg-black dark:text-gray-100 transition-colors duration-300">
 
     <!-- NAVBAR -->
     <nav class="flex justify-between items-center px-8 py-4 shadow-md
                 bg-white dark:bg-gray-800 dark:shadow-gray-700">
 
-      <!-- Logo -->
       <h1 class="text-2xl font-bold">
         <span class="text-green-600 dark:text-green-400">Learne</span>
         <span class="text-red-600 dark:text-red-400">Ai.</span>
       </h1>
 
-      <!-- Links -->
       <div class="flex items-center space-x-5 font-medium">
         <a href="/" class="hover:text-green-600 dark:hover:text-green-400">Home</a>
         <a href="/tutorials/" class="hover:text-green-600 dark:hover:text-green-400">Tutorials</a>
@@ -42,7 +38,6 @@
           <a href="/register/" class="hover:text-green-600 dark:hover:text-green-400">Register</a>
         {% endif %}
 
-        <!-- THEME TOGGLE BUTTON -->
         <button id="themeToggle"
           class="ml-4 px-3 py-2 rounded-lg border
                  border-gray-300 dark:border-gray-600
@@ -52,7 +47,6 @@
       </div>
     </nav>
 
-    <!-- MESSAGES -->
     {% if messages %}
     <div class="max-w-md mx-auto mt-6">
       {% for message in messages %}
@@ -64,17 +58,14 @@
     </div>
     {% endif %}
 
-    <!-- MAIN CONTENT -->
     <main class="p-8">
       {% block content %}{% endblock %}
     </main>
 
-    <!-- THEME SCRIPT -->
     <script>
       const toggleBtn = document.getElementById("themeToggle");
       const html = document.documentElement;
 
-      // Load saved theme
       if (localStorage.getItem("theme") === "dark") {
         html.classList.add("dark");
         toggleBtn.innerText = "☀️";
